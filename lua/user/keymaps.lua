@@ -25,3 +25,5 @@ keymap("n", "<leader>8", "8gt", opts)
 keymap("n", "<leader>9", "9gt", opts)
 keymap("n", "<leader>0", ":tabnew#<CR>", opts)
 
+-- Telescope
+keymap("n", "<leader>p", ":Telescope find_files hidden=true<CR>", opts)
