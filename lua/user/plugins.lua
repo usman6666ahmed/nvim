@@ -40,6 +40,9 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
+
+
+
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
@@ -48,8 +51,20 @@ return packer.startup(function(use)
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
       requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use { "ellisonleao/gruvbox.nvim" } -- Gruvbox
-  use "ayu-theme/ayu-vim" -- Ayu Theme
+
+
+    -- Themes
+  use "NLKNguyen/papercolor-theme"
+
+
+
+  -- Vim Air Line
+  use "vim-airline/vim-airline"
+  use "vim-airline/vim-airline-themes"
+
+
+
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
