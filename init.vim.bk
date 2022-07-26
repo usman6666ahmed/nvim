@@ -1,0 +1,167 @@
+call plug#begin()
+
+    " Essentials
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-fugitive'
+    Plug 'neovim/nvim-lspconfig'
+    Plug 'vim-airline/vim-airline'
+    Plug 'airblade/vim-gitgutter'
+
+    " Themes
+    Plug 'ayu-theme/ayu-vim'
+
+    " COC
+    Plug 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+
+    " IDE stuff
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'jremmen/vim-ripgrep'
+    Plug 'preservim/nerdtree'
+
+    " Web Dev
+    Plug 'mattn/emmet-vim'
+    Plug 'kyazdani42/nvim-web-devicons'
+
+    " Ruby
+    Plug 'ngmy/vim-rubocop'
+    Plug 'vim-ruby/vim-ruby'
+    Plug 'tpope/vim-rails'
+    Plug 'hrsh7th/nvim-cmp'
+
+
+    " Tag Editing
+    Plug 'AndrewRadev/tagalong.vim'
+
+    " Markdown
+    Plug 'godlygeek/tabular'
+    Plug 'preservim/vim-markdown'
+
+    " Rust
+    Plug 'rust-lang/rust.vim'
+    " Go
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+    "Formatting
+    Plug 'sbdchd/neoformat'
+
+    " Snippets
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+
+
+
+call plug#end()
+                        
+let mapleader = " "
+let g:tagalong_verbose = 1
+" let g:rubycomplete_buffer_loading = 1
+
+inoremap <% <%  %><Esc>3hi
+inoremap bb <Enter><Esc>O
+inoremap log console.log();<Esc>hi
+
+nnoremap <leader>o a<Enter><Esc>O<Esc>cc
+
+nnoremap <leader>p :Telescope find_files hidden=true<CR>
+nnoremap <C-b> :NERDTreeToggle<CR>
+nnoremap <C-g> :Rg 
+
+nnoremap <leader>ff :Neoformat<CR>
+
+nnoremap <leader>/ :Commentary<CR>
+xnoremap <leader>/ :Commentary<CR>
+
+noremap <leader>s :w<CR>
+
+" Tabs
+
+noremap <leader>1 1gt
+noremap <leader>2 2gt
+noremap <leader>3 3gt
+noremap <leader>4 4gt
+noremap <leader>5 5gt
+noremap <leader>6 6gt
+noremap <leader>7 7gt
+noremap <leader>8 8gt
+noremap <leader>9 9gt
+noremap <leader>0 :tabnew#<CR>
+
+" Auto close
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+
+
+set autoindent
+set smartindent
+set number relativenumber
+set scrolloff=20
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set nohlsearch
+set hidden
+set smartcase
+set incsearch
+set signcolumn=yes
+set list
+set guitablabel=%t
+set cursorline
+set updatetime=100 " gitgutter updatetime
+
+
+
+let g:gitgutter_enabled = 1
+
+
+
+set termguicolors     " enable true colors support
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+syntax on
+colorscheme ayu
+
+
+:lua require('telescope').setup{  defaults = { file_ignore_patterns = { "node_modules",".git" ,"tmp", "bin"}} }
+
+autocmd FileType css setl iskeyword+=-
+
+" autocmd BufNewFile,BufRead *.html.erb set filetype=html
+let g:user_emmet_leader_key=','
+
+
+
+
+
+
+" Ruby Stuff
+lua << EOF
+local nvim_lsp = require('lspconfig')
+require'lspconfig'.solargraph.setup{}
+
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  local opts = { noremap=true, silent=true }
+
+end
+
+local servers = { "solargraph" }
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+	on_attach = on_attach,
+	flags = {
+	  debounce_text_changes = 150,
+	}
+  }
+end
+EOF
+" Ruby Stuff Ends
