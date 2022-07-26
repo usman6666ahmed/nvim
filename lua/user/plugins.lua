@@ -51,6 +51,7 @@ return packer.startup(function(use)
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
       requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use "nvim-telescope/telescope-symbols.nvim"
 
 
     -- Themes
@@ -71,7 +72,10 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-
+  -- Formatting
+  use "ryanoasis/vim-devicons"
+  use "kyazdani42/nvim-web-devicons"
+  use "sbdchd/neoformat"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

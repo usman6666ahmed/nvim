@@ -15,6 +15,7 @@ local options = {
     list = true,
     -- guitablabel = "%t",
     cursorline = false,
+    encoding = "UTF-8",
 }
 
 for k, v in pairs(options) do
