@@ -77,6 +77,19 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-web-devicons"
   use "sbdchd/neoformat"
 
+  -- IDE
+  use "preservim/nerdtree"
+
+  -- Essentials
+  use 'tpope/vim-commentary'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-fugitive'
+  use 'neovim/nvim-lspconfig'
+  use 'vim-airline/vim-airline'
+  use 'airblade/vim-gitgutter'
+
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
