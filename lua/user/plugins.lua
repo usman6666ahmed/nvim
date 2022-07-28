@@ -81,12 +81,12 @@ return packer.startup(function(use)
   use "preservim/nerdtree"
 
   -- Essentials
-  use 'tpope/vim-commentary'
-  use 'tpope/vim-surround'
-  use 'tpope/vim-fugitive'
-  use 'neovim/nvim-lspconfig'
-  use 'vim-airline/vim-airline'
-  use 'airblade/vim-gitgutter'
+  use "tpope/vim-commentary"
+  use "tpope/vim-surround"
+  use "tpope/vim-fugitive"
+  use "neovim/nvim-lspconfig"
+  use "vim-airline/vim-airline"
+  use "airblade/vim-gitgutter"
 
 
 
