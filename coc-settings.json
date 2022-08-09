@@ -1,6 +1,0 @@
-{
-  "html": {
-    "filetypes": ["html", "erb", "eruby"]
-  },
-  "solargraph.transport": "stdio"
-}

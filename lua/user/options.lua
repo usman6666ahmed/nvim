@@ -17,8 +17,13 @@ local options = {
     -- guitablabel = "%t",
     cursorline = false,
     encoding = "UTF-8",
+    updatetime = 100,
 }
 
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
+
+
+
+vim.g["user_emmet_leader_key"] = ','

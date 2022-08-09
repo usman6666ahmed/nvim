@@ -10,8 +10,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 
--- Save key
+-- Save and quit
 keymap("n", "<leader>s", ":w<CR>", opts)
+keymap("n", "<leader>q", ":q<CR>", opts)
 
 -- Tabs
 keymap("n", "<leader>1", "1gt", opts)
@@ -27,6 +28,8 @@ keymap("n", "<leader>0", ":tabnew#<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>p", ":Telescope find_files hidden=true<CR>", opts)
+-- Ripgrep
+keymap("n", "<leader>g", ":CtrlSF ", opts)
 
 -- Formatting
 keymap("n", "<leader>ff", ":Neoformat<CR>", opts)
@@ -35,4 +38,11 @@ keymap("n", "<leader>ff", ":Neoformat<CR>", opts)
 keymap("n", "<C-b>", ":NERDTreeToggle<CR>", opts)
 
 
+-- Commentary
+keymap("n", "<leader>/", ":Commentary<CR>", opts)
+keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
+
+-- Quality of life
+
+keymap("n", "<leader>c", "$<C-v>^y<Esc>", opts)

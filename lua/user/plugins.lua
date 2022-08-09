@@ -52,6 +52,8 @@ return packer.startup(function(use)
       requires = { {'nvim-lua/plenary.nvim'} }
   }
   use "nvim-telescope/telescope-symbols.nvim"
+  -- use "jremmen/vim-ripgrep"
+  use "dyng/ctrlsf.vim"
 
 
     -- Themes
@@ -67,6 +69,8 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua"
 
   -- Snippets
   use "L3MON4D3/LuaSnip" --snippet engine
@@ -76,7 +80,7 @@ return packer.startup(function(use)
   use "ryanoasis/vim-devicons"
   use "kyazdani42/nvim-web-devicons"
   use "sbdchd/neoformat"
-
+  use 'mattn/emmet-vim'
   -- IDE
   use "preservim/nerdtree"
 
@@ -84,12 +88,15 @@ return packer.startup(function(use)
   use "tpope/vim-commentary"
   use "tpope/vim-surround"
   use "tpope/vim-fugitive"
-  use "neovim/nvim-lspconfig"
-  use "vim-airline/vim-airline"
   use "airblade/vim-gitgutter"
+  use 'AndrewRadev/tagalong.vim'
 
+  -- LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
-
+  use "github/copilot.vim"
+  use "vim-syntastic/syntastic"
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
