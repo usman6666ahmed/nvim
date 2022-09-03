@@ -57,7 +57,9 @@ return packer.startup(function(use)
 
 
     -- Themes
+  use "gerardbm/vim-atomic"
   use "NLKNguyen/papercolor-theme"
+  use {'srcery-colors/srcery-vim', as = 'srcery'}
 
   -- Vim Air Line
   use "vim-airline/vim-airline"
@@ -95,8 +97,25 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
-  use "github/copilot.vim"
+  -- use "github/copilot.vim"
   use "vim-syntastic/syntastic"
+  use "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
+
+  -- Web Server
+  use "turbio/bracey.vim"
+
+  -- Ruby on rails
+  use "tpope/vim-rails"
+  use "vim-test/vim-test"
+
+  -- Vim Move
+  use 'matze/vim-move'
+
+  -- React Dev
+  use 'pangloss/vim-javascript'
+  use 'leafgarland/typescript-vim'
+  use 'peitalin/vim-jsx-typescript'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

@@ -9,10 +9,12 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-
 -- Save and quit
 keymap("n", "<leader>s", ":w<CR>", opts)
-keymap("n", "<leader>q", ":q<CR>", opts)
+keymap("n", "<leader>q", ":tabclose<CR>", opts)
+
+-- Exiting Insert mode
+keymap("i", "jk", "<Esc>", opts)
 
 -- Tabs
 keymap("n", "<leader>1", "1gt", opts)
@@ -37,12 +39,17 @@ keymap("n", "<leader>ff", ":Neoformat<CR>", opts)
 -- Nerd Tree
 keymap("n", "<C-b>", ":NERDTreeToggle<CR>", opts)
 
-
 -- Commentary
 keymap("n", "<leader>/", ":Commentary<CR>", opts)
 keymap("v", "<leader>/", ":Commentary<CR>", opts)
 
-
 -- Quality of life
-
 keymap("n", "<leader>c", "$<C-v>^y<Esc>", opts)
+
+-- Rails Vim
+keymap("n", "<leader>rv", ":Tview<CR>", opts)
+keymap("n", "<leader>rc", ":Tcontroller<CR>", opts)
+
+-- Testing
+keymap("n", "<leader>tt", ":TestFile<CR>", opts)
+keymap("n", "<leader>tn", ":TestNearest<CR>", opts)
