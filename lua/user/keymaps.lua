@@ -49,6 +49,7 @@ keymap("n", "<leader>c", "$<C-v>^y<Esc>", opts)
 -- Rails Vim
 keymap("n", "<leader>rv", ":Tview<CR>", opts)
 keymap("n", "<leader>rc", ":Tcontroller<CR>", opts)
+keymap("i", "do<CR>", "do<CR>end<Esc>O", opts)
 
 -- Testing
 keymap("n", "<leader>tt", ":TestFile<CR>", opts)

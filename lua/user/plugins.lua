@@ -56,10 +56,17 @@ return packer.startup(function(use)
   use "dyng/ctrlsf.vim"
 
 
-    -- Themes
-  use "gerardbm/vim-atomic"
-  use "NLKNguyen/papercolor-theme"
-  use {'srcery-colors/srcery-vim', as = 'srcery'}
+  -- Themes
+ use "vim-scripts/CSApprox"
+
+ use "sjl/badwolf"
+ use "sonph/onehalf"
+ use "nlknguyen/papercolor-theme"
+ use "joshdick/onedark.vim"
+ use "sainnhe/sonokai"
+ use {'srcery-colors/srcery-vim', as = 'srcery'}
+ use "ayu-theme/ayu-vim"
+
 
   -- Vim Air Line
   use "vim-airline/vim-airline"
@@ -85,6 +92,7 @@ return packer.startup(function(use)
   use 'mattn/emmet-vim'
   -- IDE
   use "preservim/nerdtree"
+  use "tiagofumo/vim-nerdtree-syntax-highlight"
 
   -- Essentials
   use "tpope/vim-commentary"
@@ -97,7 +105,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
-  -- use "github/copilot.vim"
+  use "github/copilot.vim"
   use "vim-syntastic/syntastic"
   use "WhoIsSethDaniel/toggle-lsp-diagnostics.nvim"
 

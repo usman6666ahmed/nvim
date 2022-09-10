@@ -41,6 +41,9 @@ local function save_profiles(threshold)
       results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
     end
   end
+  if threshold then
+    table.insert(results, '(Only showing plugins that took longer than ' .. threshold .. ' ms ' .. 'to load)')
+  end
 
   _G._packer.profile_output = results
 end
@@ -71,10 +74,25 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  CSApprox = {
+    loaded = true,
+    path = "/home/dev/.local/share/nvim/site/pack/packer/start/CSApprox",
+    url = "https://github.com/vim-scripts/CSApprox"
+  },
   LuaSnip = {
     loaded = true,
     path = "/home/dev/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["ayu-vim"] = {
+    loaded = true,
+    path = "/home/dev/.local/share/nvim/site/pack/packer/start/ayu-vim",
+    url = "https://github.com/ayu-theme/ayu-vim"
+  },
+  badwolf = {
+    loaded = true,
+    path = "/home/dev/.local/share/nvim/site/pack/packer/start/badwolf",
+    url = "https://github.com/sjl/badwolf"
   },
   ["bracey.vim"] = {
     loaded = true,
@@ -110,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dev/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["copilot.vim"] = {
+    loaded = true,
+    path = "/home/dev/.local/share/nvim/site/pack/packer/start/copilot.vim",
+    url = "https://github.com/github/copilot.vim"
   },
   ["ctrlsf.vim"] = {
     loaded = true,
@@ -156,6 +179,16 @@ _G.packer_plugins = {
     path = "/home/dev/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["onedark.vim"] = {
+    loaded = true,
+    path = "/home/dev/.local/share/nvim/site/pack/packer/start/onedark.vim",
+    url = "https://github.com/joshdick/onedark.vim"
+  },
+  onehalf = {
+    loaded = true,
+    path = "/home/dev/.local/share/nvim/site/pack/packer/start/onehalf",
+    url = "https://github.com/sonph/onehalf"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/dev/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -164,7 +197,7 @@ _G.packer_plugins = {
   ["papercolor-theme"] = {
     loaded = true,
     path = "/home/dev/.local/share/nvim/site/pack/packer/start/papercolor-theme",
-    url = "https://github.com/NLKNguyen/papercolor-theme"
+    url = "https://github.com/nlknguyen/papercolor-theme"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -175,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dev/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  sonokai = {
+    loaded = true,
+    path = "/home/dev/.local/share/nvim/site/pack/packer/start/sonokai",
+    url = "https://github.com/sainnhe/sonokai"
   },
   srcery = {
     loaded = true,
@@ -221,11 +259,6 @@ _G.packer_plugins = {
     path = "/home/dev/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
     url = "https://github.com/vim-airline/vim-airline-themes"
   },
-  ["vim-atomic"] = {
-    loaded = true,
-    path = "/home/dev/.local/share/nvim/site/pack/packer/start/vim-atomic",
-    url = "https://github.com/gerardbm/vim-atomic"
-  },
   ["vim-commentary"] = {
     loaded = true,
     path = "/home/dev/.local/share/nvim/site/pack/packer/start/vim-commentary",
@@ -260,6 +293,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dev/.local/share/nvim/site/pack/packer/start/vim-move",
     url = "https://github.com/matze/vim-move"
+  },
+  ["vim-nerdtree-syntax-highlight"] = {
+    loaded = true,
+    path = "/home/dev/.local/share/nvim/site/pack/packer/start/vim-nerdtree-syntax-highlight",
+    url = "https://github.com/tiagofumo/vim-nerdtree-syntax-highlight"
   },
   ["vim-rails"] = {
     loaded = true,
